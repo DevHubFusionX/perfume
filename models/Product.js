@@ -13,7 +13,7 @@ const productSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Traditional', 'Casual', 'Premium', 'Fabrics', 'Accessories']
+    enum: ['Men', 'Women', 'Unisex', 'Gift Sets']
   },
   description: {
     type: String,
@@ -30,21 +30,33 @@ const productSchema = new mongoose.Schema({
     name: String,
     images: [String]
   }],
-  fabricType: {
+  brand: {
     type: String,
+    required: true,
     trim: true
   },
-  texture: {
+  size: {
     type: String,
+    required: true,
     trim: true
   },
-  quality: {
+  fragranceType: {
     type: String,
-    trim: true
+    required: true,
+    enum: ['Eau de Parfum', 'Eau de Toilette', 'Parfum', 'Cologne']
   },
-  care: {
+  notes: {
+    top: [String],
+    middle: [String],
+    base: [String]
+  },
+  longevity: {
     type: String,
-    trim: true
+    enum: ['2-4 hours', '4-6 hours', '6-8 hours', '8+ hours']
+  },
+  sillage: {
+    type: String,
+    enum: ['Light', 'Moderate', 'Strong', 'Very Strong']
   },
   cloudinaryId: {
     type: String

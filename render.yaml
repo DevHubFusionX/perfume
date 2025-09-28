@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: moderate-ustaz-backend
+    name: essence-boutique-backend
     runtime: node
     buildCommand: npm ci
     startCommand: node index.js
